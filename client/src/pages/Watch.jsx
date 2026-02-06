@@ -7,7 +7,7 @@ function Watch() {
 
   useEffect(() => {
     // 1. Gọi điện cho Backend xin thông tin phim theo ID
-    fetch(`http://localhost:5000/api/movies/${id}`)
+    fetch(`https://web-phim-3d.onrender.com/api/movies/${id}`)
       .then((res) => res.json())
       .then((data) => setMovie(data)) // 2. Lưu phim vào biến
       .catch((err) => console.log(err));

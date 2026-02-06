@@ -14,7 +14,7 @@ function Admin() {
 
   // --- LẤY DANH SÁCH PHIM ---
   useEffect(() => {
-    fetch("http://localhost:5000/api/movies")
+    fetch("https://web-phim-3d.onrender.com/api/movies")
       .then((res) => res.json())
       .then((data) => setMovies(data))
       .catch((err) => console.log(err));
@@ -28,12 +28,12 @@ function Admin() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      let url = "http://localhost:5000/api/movies";
+      let url = "https://web-phim-3d.onrender.com/api/movies";
       let method = "POST";
 
       // Nếu đang có ID sửa -> Chuyển sang chế độ SỬA (PUT)
       if (editingId) {
-        url = `http://localhost:5000/api/movies/${editingId}`;
+        url = `https://web-phim-3d.onrender.com/api/movies/${editingId}`;
         method = "PUT";
       }
 
@@ -96,7 +96,7 @@ function Admin() {
   const handleDelete = async (id) => {
     if (!window.confirm("Bạn có chắc muốn xóa không?")) return;
     try {
-      await fetch(`http://localhost:5000/api/movies/${id}`, { method: "DELETE" });
+      await fetch(`https://web-phim-3d.onrender.com/api/movies/${id}`, { method: "DELETE" });
       setMovies(movies.filter(movie => movie._id !== id));
     } catch (err) { alert("Lỗi xóa"); }
   };

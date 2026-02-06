@@ -7,7 +7,7 @@ function Home() {
   const [searchTerm, setSearchTerm] = useState(""); // 1. Biến để lưu từ khóa tìm kiếm
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/movies")
+    fetch("https://web-phim-3d.onrender.com/api/movies")
       .then((res) => res.json())
       .then((data) => setMovies(data))
       .catch((err) => console.log(err));

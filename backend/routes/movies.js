@@ -14,7 +14,7 @@ function createSlug(str) {
 }
 
 // 1. API THÊM PHIM MỚI (Đã sửa lại để dùng hàm tạo Slug)
-// Postman sẽ gửi vào: POST http://localhost:5000/api/movies
+// Postman sẽ gửi vào: POST https://web-phim-3d.onrender.com/api/movies
 router.post("/", async (req, res) => {
     try {
         // Lấy dữ liệu người dùng gửi lên
@@ -35,7 +35,7 @@ router.post("/", async (req, res) => {
 });
 
 // 2. API LẤY DANH SÁCH TẤT CẢ PHIM (Dành cho Trang chủ)
-// Trình duyệt sẽ gõ: GET http://localhost:5000/api/movies
+// Trình duyệt sẽ gõ: GET https://web-phim-3d.onrender.com/api/movies
 router.get("/", async (req, res) => {
     try {
         const movies = await Movie.find(); // Lấy tất cả phim trong kho
@@ -56,7 +56,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // API XÓA PHIM (DELETE)
-// Gọi vào: DELETE http://localhost:5000/api/movies/ID_CUA_PHIM
+// Gọi vào: DELETE https://web-phim-3d.onrender.comhttps://web-phim-3d.onrender.com/api/movies/ID_CUA_PHIM
 router.delete('/:id', async (req, res) => {
     try {
         await Movie.findByIdAndDelete(req.params.id); // Tìm đúng ID và xóa
@@ -67,7 +67,7 @@ router.delete('/:id', async (req, res) => {
 });
 
 // API SỬA PHIM (UPDATE)
-// Gọi vào: PUT http://localhost:5000/api/movies/ID_CUA_PHIM
+// Gọi vào: PUT https://web-phim-3d.onrender.com/api/movies/ID_CUA_PHIM
 router.put("/:id", async (req, res) => {
   try {
     // 1. Tìm phim theo ID và cập nhật bằng dữ liệu mới gửi lên (req.body)
