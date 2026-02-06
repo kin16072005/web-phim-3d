@@ -10,7 +10,8 @@ const app = express();
 const PORT = 5000;
 
 // --- PHẦN 2: KẾT NỐI MONGODB (LOCAL) ---
-const MONGO_URI = "mongodb://127.0.0.1:27017/WebPhimHH";     
+// Dòng code thông minh: Ưu tiên lấy link trên Render trước, nếu không có mới dùng Local
+const MONGO_URI = process.env.MONGO_URL || "mongodb://127.0.0.1:27017/WebPhimHH";   
 
 // --- PHẦN 3: CẤU HÌNH ---
 app.use(cors()); // Cho phép trang web bên ngoài gọi vào
